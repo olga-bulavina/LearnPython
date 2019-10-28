@@ -72,12 +72,12 @@ def play_igrok(board, turn):
             pos = LETTERS[:BOARD_SIZE].index(letter)
         except ValueError:
             print("Неправильное значение")
+            continue
+        if board[pos] == '-':
+            board[pos] = turn
+            return
         else:
-            if board[pos] == '-':
-                board[pos] = turn
-                return
-            else:
-                print("Это поле занято!")
+            print("Это поле занято!")
 
 
 def play_computer(board, turn):
