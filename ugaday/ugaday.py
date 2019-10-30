@@ -38,7 +38,7 @@ def zagadat(x, y):
         if question("Загаданное число {}? (да/нет)".format(z)):
             break
 
-        if question("Загаданное число меньше? (да/нет)".format(z)):
+        if question("Загаданное число меньше? (да/нет)"):
             y = z
         else:
             x = z

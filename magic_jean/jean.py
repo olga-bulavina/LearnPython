@@ -33,16 +33,28 @@ voprosy3 = [
     ]
 ]
 
+def yes_no(s):
+    while True:
+        result = input(s)
+        if result in ["да", "д", "yes", "y", "1", "lf"]:
+            return True
+        if result in ["нет", "н", "no", "n", "0", "2", "ytn"]:
+            return False
+        print("Я не понимаю")
 
-def jean1(otvety):
-    assert len(otvety) == 1
-    vopros = otvety.keys()[0]
-    da = otvety[vopros]['да']
-    net = otvety[vopros]['нет']
-    print(vopros)
-    print(da)
-    print(net)
+def jean1(vopros):
+    while True:
+        q = vopros['question']
+        if yes_no(q+'да/нет'):
+            otvet = vopros["yes"]
+        else:
+            otvet = vopros['no']
+        if type(otvet)==str:
+            print ('ответ:' + otvet)
+            break
+        else:
+            vopros = otvet
 
 
 if __name__ == '__main__':
-    jean1(voprosy1)
+    jean1(voprosy2)
